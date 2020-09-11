@@ -167,6 +167,10 @@ var Root = /** @class */ (function (_super) {
                     case 0: return [4 /*yield*/, miro.__getRuntimeState()];
                     case 1:
                         savedState = _a.sent();
+                        miro.__setRuntimeState({
+                            a: 'bla',
+                            b: 'bla'
+                        });
                         return [2 /*return*/];
                 }
             });
