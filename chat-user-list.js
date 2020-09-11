@@ -28623,20 +28623,20 @@ var Panel = /** @class */ (function (_super) {
     function Panel() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.containerRef = react__WEBPACK_IMPORTED_MODULE_0__["createRef"]();
-        _this.state = {};
         return _this;
     }
     Panel.prototype.componentWillMount = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var _a;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
+            var savedState, _a, _b;
+            return __generator(this, function (_c) {
+                switch (_c.label) {
                     case 0:
-                        _a = this;
+                        _b = (_a = JSON).stringify;
                         return [4 /*yield*/, miro.__getRuntimeState()];
                     case 1:
-                        _a.savedState = _b.sent();
-                        console.log(this.savedState);
+                        savedState = _b.apply(_a, [_c.sent()]);
+                        console.log(savedState);
+                        this.setState({ savedState: savedState });
                         return [2 /*return*/];
                 }
             });
@@ -28645,10 +28645,11 @@ var Panel = /** @class */ (function (_super) {
     Panel.prototype.componentDidMount = function () {
     };
     Panel.prototype.render = function () {
+        var savedState = this.state.savedState;
         return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { ref: this.containerRef },
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'new-video-chat-users' },
                 "1 1 2",
-                JSON.stringify(this.savedState),
+                JSON.stringify(savedState),
                 "3 3 4"));
     };
     return Panel;
