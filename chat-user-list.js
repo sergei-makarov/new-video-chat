@@ -28634,6 +28634,7 @@ var Panel = /** @class */ (function (_super) {
                     case 0: return [4 /*yield*/, miro.__getRuntimeState()];
                     case 1:
                         savedState = _a.sent();
+                        console.log(savedState);
                         return [2 /*return*/];
                 }
             });
