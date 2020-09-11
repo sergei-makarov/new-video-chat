@@ -28628,13 +28628,15 @@ var Panel = /** @class */ (function (_super) {
     }
     Panel.prototype.componentWillMount = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var savedState;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, miro.__getRuntimeState()];
+            var _a;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        _a = this;
+                        return [4 /*yield*/, miro.__getRuntimeState()];
                     case 1:
-                        savedState = _a.sent();
-                        console.log(savedState);
+                        _a.savedState = _b.sent();
+                        console.log(this.savedState);
                         return [2 /*return*/];
                 }
             });
@@ -28644,7 +28646,10 @@ var Panel = /** @class */ (function (_super) {
     };
     Panel.prototype.render = function () {
         return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { ref: this.containerRef },
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'new-video-chat-users' }));
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'new-video-chat-users' },
+                "1 1 2",
+                this.savedState,
+                "3 3 4"));
     };
     return Panel;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]));
