@@ -28648,7 +28648,7 @@ var Panel = /** @class */ (function (_super) {
         return react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { ref: this.containerRef },
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'new-video-chat-users' },
                 "1 1 2",
-                this.savedState,
+                JSON.stringify(this.savedState),
                 "3 3 4"));
     };
     return Panel;
