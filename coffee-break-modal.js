@@ -176,11 +176,12 @@ var Root = /** @class */ (function (_super) {
         return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { ref: this.containerRef },
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'coffee-break-modal__banner_wrapper' },
                 react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_inlinesvg__WEBPACK_IMPORTED_MODULE_2___default.a, { className: 'coffee-break-modal__banner', src: BANNER_IMG })),
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", { className: "miro-btn miro-btn--primary miro-btn--medium", onClick: this.setCoffeeBreakEnabled }, "!!Start coffee break!")));
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", { className: "miro-btn miro-btn--primary miro-btn--medium", onClick: this.setCoffeeBreakEnabled }, "!!Start coffee break!"),
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", { className: "miro-btn miro-btn--primary miro-btn--medium", onClick: this.test }, "Test")));
     };
     Root.prototype.setCoffeeBreakEnabled = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var _a, widget;
+            var _a;
             return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0: return [4 /*yield*/, miro.board.widgets.create({
@@ -197,13 +198,23 @@ var Root = /** @class */ (function (_super) {
                         })];
                     case 1:
                         _b.sent();
-                        return [4 /*yield*/, miro.board.widgets.get({
-                                type: 'sticker',
-                                x: 0,
-                                y: 0
-                            })];
-                    case 2:
-                        widget = _b.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Root.prototype.test = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var widget;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, miro.board.widgets.get({
+                            type: 'sticker',
+                            x: 0,
+                            y: 0
+                        })];
+                    case 1:
+                        widget = _a.sent();
                         console.log(widget);
                         console.log(widget[0].metadata);
                         return [2 /*return*/];
