@@ -102,7 +102,178 @@ function normalizePath(htmlName) {
 
 
 /***/ }),
-/* 2 */,
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "STATE_CHANGED_EVENT_NAME", function() { return STATE_CHANGED_EVENT_NAME; });
+/* harmony import */ var config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+var STATE_CHANGED_EVENT_NAME = 'break_state_changed';
+var BreakStateHelper = /** @class */ (function () {
+    function BreakStateHelper() {
+        this.isBreakEnabled = false;
+    }
+    Object.defineProperty(BreakStateHelper, "instance", {
+        get: function () {
+            if (!BreakStateHelper.initInstance) {
+                BreakStateHelper.initInstance = new BreakStateHelper();
+            }
+            return BreakStateHelper.initInstance;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    BreakStateHelper.prototype.getStateWidget = function () {
+        return __awaiter(this, void 0, Promise, function () {
+            var widgets, i, metadata;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, miro.board.widgets.get({
+                            type: 'sticker',
+                            x: 0,
+                            y: 0
+                        })];
+                    case 1:
+                        widgets = _a.sent();
+                        if (!widgets || !widgets.length) {
+                            return [2 /*return*/, undefined];
+                        }
+                        for (i = 0; i < widgets.length; i++) {
+                            metadata = widgets[i].metadata;
+                            if (!metadata) {
+                                continue;
+                            }
+                            if (!metadata[config__WEBPACK_IMPORTED_MODULE_0__["APP_ID"]]) {
+                                continue;
+                            }
+                            return [2 /*return*/, widgets[i]];
+                        }
+                        return [2 /*return*/, undefined];
+                }
+            });
+        });
+    };
+    BreakStateHelper.prototype.init = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var widget;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getStateWidget()];
+                    case 1:
+                        widget = _a.sent();
+                        if (!widget || !widget.metadata || !widget.metadata[config__WEBPACK_IMPORTED_MODULE_0__["APP_ID"]]) {
+                            this.setBreakEnabled(false);
+                            return [2 /*return*/];
+                        }
+                        this.setBreakEnabled(!!widget.metadata[config__WEBPACK_IMPORTED_MODULE_0__["APP_ID"]].enabled);
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    BreakStateHelper.prototype.setBreakEnabled = function (value) {
+        this.isBreakEnabled = value;
+        this.raise();
+    };
+    BreakStateHelper.prototype.raise = function () {
+        console.warn("isBreakEnabled changed from " + !this.isBreakEnabled + " to " + this.isBreakEnabled);
+        document.dispatchEvent(new CustomEvent(STATE_CHANGED_EVENT_NAME, {
+            detail: { isBreakEnabled: this.isBreakEnabled }
+        }));
+    };
+    BreakStateHelper.prototype.turnOn = function () {
+        return __awaiter(this, void 0, Promise, function () {
+            var _a, widget;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.getStateWidget()];
+                    case 1:
+                        widget = _b.sent();
+                        if (widget && widget.metadata && widget.metadata.enabled) {
+                            return [2 /*return*/];
+                        }
+                        return [4 /*yield*/, miro.board.widgets.create({
+                                type: 'sticker',
+                                x: 0,
+                                y: 0,
+                                width: 1000,
+                                height: 1000,
+                                metadata: (_a = {},
+                                    _a[config__WEBPACK_IMPORTED_MODULE_0__["APP_ID"]] = {
+                                        creator: 'ME!',
+                                        enabled: true
+                                    },
+                                    _a)
+                            })];
+                    case 2:
+                        _b.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    BreakStateHelper.prototype.turnOff = function () {
+        return __awaiter(this, void 0, Promise, function () {
+            var widget;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getStateWidget()];
+                    case 1:
+                        widget = _a.sent();
+                        if (!widget) {
+                            return [2 /*return*/];
+                        }
+                        return [4 /*yield*/, miro.board.widgets.deleteById(widget.id)];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    return BreakStateHelper;
+}());
+/* harmony default export */ __webpack_exports__["default"] = (BreakStateHelper);
+
+
+/***/ }),
 /* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -114,7 +285,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(15);
 /* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_inlinesvg__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1);
+/* harmony import */ var helpers_break_state_helper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -178,27 +349,28 @@ var Root = /** @class */ (function (_super) {
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'coffee-break-modal__banner_wrapper' },
                 react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_inlinesvg__WEBPACK_IMPORTED_MODULE_2___default.a, { className: 'coffee-break-modal__banner', src: BANNER_IMG })),
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", { className: "miro-btn miro-btn--primary miro-btn--medium", onClick: this.setCoffeeBreakEnabled }, "!!Start coffee break!"),
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", { className: "miro-btn miro-btn--primary miro-btn--medium", onClick: this.setCoffeeBreakDisabled }, "!!Stop coffee break!"),
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", { className: "miro-btn miro-btn--primary miro-btn--medium", onClick: this.test }, "Test")));
     };
     Root.prototype.setCoffeeBreakEnabled = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var _a;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
-                    case 0: return [4 /*yield*/, miro.board.widgets.create({
-                            type: 'sticker',
-                            x: 0,
-                            y: 0,
-                            width: 1000,
-                            height: 1000,
-                            metadata: (_a = {},
-                                _a[config__WEBPACK_IMPORTED_MODULE_3__["APP_ID"]] = {
-                                    creator: 'ME!'
-                                },
-                                _a)
-                        })];
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, helpers_break_state_helper__WEBPACK_IMPORTED_MODULE_3__["default"].instance.turnOn()];
                     case 1:
-                        _b.sent();
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Root.prototype.setCoffeeBreakDisabled = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, helpers_break_state_helper__WEBPACK_IMPORTED_MODULE_3__["default"].instance.turnOff()];
+                    case 1:
+                        _a.sent();
                         return [2 /*return*/];
                 }
             });

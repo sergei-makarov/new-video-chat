@@ -242,8 +242,8 @@ var BreakStateHelper = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    BreakStateHelper.prototype.init = function () {
-        return __awaiter(this, void 0, void 0, function () {
+    BreakStateHelper.prototype.getStateWidget = function () {
+        return __awaiter(this, void 0, Promise, function () {
             var widgets, i, metadata;
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -255,8 +255,7 @@ var BreakStateHelper = /** @class */ (function () {
                     case 1:
                         widgets = _a.sent();
                         if (!widgets || !widgets.length) {
-                            this.setBreakEnabled(false);
-                            return [2 /*return*/];
+                            return [2 /*return*/, undefined];
                         }
                         for (i = 0; i < widgets.length; i++) {
                             metadata = widgets[i].metadata;
@@ -266,10 +265,26 @@ var BreakStateHelper = /** @class */ (function () {
                             if (!metadata[config__WEBPACK_IMPORTED_MODULE_0__["APP_ID"]]) {
                                 continue;
                             }
-                            this.setBreakEnabled(metadata[config__WEBPACK_IMPORTED_MODULE_0__["APP_ID"]].enabled);
+                            return [2 /*return*/, widgets[i]];
+                        }
+                        return [2 /*return*/, undefined];
+                }
+            });
+        });
+    };
+    BreakStateHelper.prototype.init = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var widget;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getStateWidget()];
+                    case 1:
+                        widget = _a.sent();
+                        if (!widget || !widget.metadata || !widget.metadata[config__WEBPACK_IMPORTED_MODULE_0__["APP_ID"]]) {
+                            this.setBreakEnabled(false);
                             return [2 /*return*/];
                         }
-                        this.setBreakEnabled(false);
+                        this.setBreakEnabled(!!widget.metadata[config__WEBPACK_IMPORTED_MODULE_0__["APP_ID"]].enabled);
                         return [2 /*return*/];
                 }
             });
@@ -284,6 +299,56 @@ var BreakStateHelper = /** @class */ (function () {
         document.dispatchEvent(new CustomEvent(STATE_CHANGED_EVENT_NAME, {
             detail: { isBreakEnabled: this.isBreakEnabled }
         }));
+    };
+    BreakStateHelper.prototype.turnOn = function () {
+        return __awaiter(this, void 0, Promise, function () {
+            var _a, widget;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
+                    case 0: return [4 /*yield*/, this.getStateWidget()];
+                    case 1:
+                        widget = _b.sent();
+                        if (widget && widget.metadata && widget.metadata.enabled) {
+                            return [2 /*return*/];
+                        }
+                        return [4 /*yield*/, miro.board.widgets.create({
+                                type: 'sticker',
+                                x: 0,
+                                y: 0,
+                                width: 1000,
+                                height: 1000,
+                                metadata: (_a = {},
+                                    _a[config__WEBPACK_IMPORTED_MODULE_0__["APP_ID"]] = {
+                                        creator: 'ME!',
+                                        enabled: true
+                                    },
+                                    _a)
+                            })];
+                    case 2:
+                        _b.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    BreakStateHelper.prototype.turnOff = function () {
+        return __awaiter(this, void 0, Promise, function () {
+            var widget;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getStateWidget()];
+                    case 1:
+                        widget = _a.sent();
+                        if (!widget) {
+                            return [2 /*return*/];
+                        }
+                        return [4 /*yield*/, miro.board.widgets.deleteById(widget.id)];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
     };
     return BreakStateHelper;
 }());
