@@ -155,7 +155,7 @@ miro.onReady(function () { return __awaiter(_this, void 0, void 0, function () {
                                                     title: 'Prototype',
                                                     svgIcon: icon24,
                                                     onClick: function () {
-                                                        miro.board.ui.openModal('coffee-break-modal');
+                                                        miro.board.ui.openModal('coffee-break-modal.html');
                                                     },
                                                 }];
                                         }
