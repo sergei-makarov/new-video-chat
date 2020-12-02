@@ -93,9 +93,11 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PATH_PREFIX", function() { return PATH_PREFIX; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "APP_ID", function() { return APP_ID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "STATE_CHANGED_EVENT_NAME", function() { return STATE_CHANGED_EVENT_NAME; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "normalizePath", function() { return normalizePath; });
 var PATH_PREFIX = 'new-video-chat/';
 var APP_ID = '3074457352186897321';
+var STATE_CHANGED_EVENT_NAME = 'break_state_changed';
 function normalizePath(htmlName) {
     return PATH_PREFIX + "/" + htmlName;
 }
@@ -107,7 +109,6 @@ function normalizePath(htmlName) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "STATE_CHANGED_EVENT_NAME", function() { return STATE_CHANGED_EVENT_NAME; });
 /* harmony import */ var config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -145,7 +146,6 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
     }
 };
 
-var STATE_CHANGED_EVENT_NAME = 'break_state_changed';
 var BreakStateHelper = /** @class */ (function () {
     function BreakStateHelper() {
         this.isBreakEnabled = false;
@@ -214,7 +214,7 @@ var BreakStateHelper = /** @class */ (function () {
     };
     BreakStateHelper.prototype.raise = function () {
         console.warn("isBreakEnabled changed from " + !this.isBreakEnabled + " to " + this.isBreakEnabled);
-        document.dispatchEvent(new CustomEvent(STATE_CHANGED_EVENT_NAME, {
+        document.dispatchEvent(new CustomEvent(config__WEBPACK_IMPORTED_MODULE_0__["STATE_CHANGED_EVENT_NAME"], {
             detail: { isBreakEnabled: this.isBreakEnabled }
         }));
     };
@@ -244,6 +244,7 @@ var BreakStateHelper = /** @class */ (function () {
                             })];
                     case 2:
                         _b.sent();
+                        this.setBreakEnabled(true);
                         return [2 /*return*/];
                 }
             });
@@ -263,6 +264,7 @@ var BreakStateHelper = /** @class */ (function () {
                         return [4 /*yield*/, miro.board.widgets.deleteById(widget.id)];
                     case 2:
                         _a.sent();
+                        this.setBreakEnabled(false);
                         return [2 /*return*/];
                 }
             });
