@@ -141,7 +141,7 @@ var Root = /** @class */ (function (_super) {
         return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { ref: this.containerRef },
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'coffee-break-modal__banner_wrapper' },
                 react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_inlinesvg__WEBPACK_IMPORTED_MODULE_2___default.a, { className: 'coffee-break-modal__banner', src: BANNER_IMG })),
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", { className: "miro-btn miro-btn--primary miro-btn--medium", onClick: this.setCoffeeBreakEnabled }, "Start coffee break")));
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", { className: "miro-btn miro-btn--primary miro-btn--medium", onClick: this.setCoffeeBreakEnabled }, "Start coffee break!")));
     };
     Root.prototype.setCoffeeBreakEnabled = function () {
         var _a;
