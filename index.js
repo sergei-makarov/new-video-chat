@@ -182,9 +182,7 @@ miro.onReady(function () { return __awaiter(_this, void 0, void 0, function () {
                 miro.board.ui.closeModal();
             }
         });
-        miro.addListener('ALL_WIDGETS_LOADED', function () {
-            helpers_break_state_helper__WEBPACK_IMPORTED_MODULE_1__["default"].instance.init();
-        });
+        helpers_break_state_helper__WEBPACK_IMPORTED_MODULE_1__["default"].instance.init();
         return [2 /*return*/];
     });
 }); });
