@@ -181,8 +181,10 @@ miro.onReady(function () { return __awaiter(_this, void 0, void 0, function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PATH_PREFIX", function() { return PATH_PREFIX; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "APP_ID", function() { return APP_ID; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "normalizePath", function() { return normalizePath; });
 var PATH_PREFIX = 'new-video-chat/';
+var APP_ID = '3074457352186897321';
 function normalizePath(htmlName) {
     return PATH_PREFIX + "/" + htmlName;
 }

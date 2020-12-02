@@ -86,7 +86,22 @@
 /************************************************************************/
 /******/ ([
 /* 0 */,
-/* 1 */,
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PATH_PREFIX", function() { return PATH_PREFIX; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "APP_ID", function() { return APP_ID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "normalizePath", function() { return normalizePath; });
+var PATH_PREFIX = 'new-video-chat/';
+var APP_ID = '3074457352186897321';
+function normalizePath(htmlName) {
+    return PATH_PREFIX + "/" + htmlName;
+}
+
+
+/***/ }),
 /* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -98,6 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(14);
 /* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_inlinesvg__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -108,6 +124,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+
 
 
 
@@ -127,15 +144,18 @@ var Root = /** @class */ (function (_super) {
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", { className: "miro-btn miro-btn--primary miro-btn--medium", onClick: this.setCoffeeBreakEnabled }, "Start coffee break")));
     };
     Root.prototype.setCoffeeBreakEnabled = function () {
+        var _a;
         miro.board.widgets.create({
             type: 'sticker',
             x: 0,
             y: 0,
-            width: 100,
-            height: 100,
-            metadata: {
-                creator: 'ME!'
-            }
+            width: 1000,
+            height: 1000,
+            metadata: (_a = {},
+                _a[config__WEBPACK_IMPORTED_MODULE_3__["APP_ID"]] = {
+                    creator: 'ME!'
+                },
+                _a)
         });
     };
     return Root;
