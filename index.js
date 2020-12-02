@@ -197,10 +197,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PATH_PREFIX", function() { return PATH_PREFIX; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "APP_ID", function() { return APP_ID; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "STATE_CHANGED_EVENT_NAME", function() { return STATE_CHANGED_EVENT_NAME; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "STATE_UPDATE_DELAY", function() { return STATE_UPDATE_DELAY; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "normalizePath", function() { return normalizePath; });
 var PATH_PREFIX = 'new-video-chat/';
 var APP_ID = '3074457352186897321';
 var STATE_CHANGED_EVENT_NAME = 'break_state_changed';
+var STATE_UPDATE_DELAY = 500;
 function normalizePath(htmlName) {
     return PATH_PREFIX + "/" + htmlName;
 }
@@ -295,21 +297,12 @@ var BreakStateHelper = /** @class */ (function () {
     };
     BreakStateHelper.prototype.init = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        miro.addListener('WIDGETS_CREATED', function (e) {
-                            console.error(e);
-                            _this.reloadState();
-                        });
-                        miro.addListener('WIDGETS_DELETED', function (e) {
-                            console.error(e);
-                            _this.reloadState();
-                        });
-                        return [4 /*yield*/, this.reloadState()];
+                    case 0: return [4 /*yield*/, this.reloadState()];
                     case 1:
                         _a.sent();
+                        setInterval(this.reloadState(), config__WEBPACK_IMPORTED_MODULE_0__["STATE_UPDATE_DELAY"]);
                         return [2 /*return*/];
                 }
             });
