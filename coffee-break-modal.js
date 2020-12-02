@@ -192,6 +192,26 @@ var BreakStateHelper = /** @class */ (function () {
     };
     BreakStateHelper.prototype.init = function () {
         return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        miro.addListener('WIDGETS_CREATED', function () {
+                            _this.reloadState();
+                        });
+                        miro.addListener('WIDGETS_DELETED', function () {
+                            _this.reloadState();
+                        });
+                        return [4 /*yield*/, this.reloadState()];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    BreakStateHelper.prototype.reloadState = function () {
+        return __awaiter(this, void 0, void 0, function () {
             var widget;
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -209,6 +229,9 @@ var BreakStateHelper = /** @class */ (function () {
         });
     };
     BreakStateHelper.prototype.setBreakEnabled = function (value) {
+        if (value === this.isBreakEnabled) {
+            return;
+        }
         this.isBreakEnabled = value;
         this.raise();
     };
