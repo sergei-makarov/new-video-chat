@@ -368,12 +368,6 @@ var Root = /** @class */ (function (_super) {
         return _this;
     }
     Root.prototype.render = function () {
-        var unityContext = new UnityContext({
-            loaderUrl: 'galaxy/UnityLoader.js',
-            dataUrl: 'galaxy/js.data.unityweb',
-            frameworkUrl: 'galaxy/js.wasm.framework.unityweb',
-            codeUrl: 'galaxy/js.wasm.code.unityweb',
-        });
         return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { ref: this.containerRef },
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'coffee-break-modal__banner_wrapper' },
                 react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_inlinesvg__WEBPACK_IMPORTED_MODULE_2___default.a, { className: 'coffee-break-modal__banner', src: BANNER_IMG })),
