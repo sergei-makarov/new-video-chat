@@ -196,10 +196,12 @@ var BreakStateHelper = /** @class */ (function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        miro.addListener('WIDGETS_CREATED', function () {
+                        miro.addListener('WIDGETS_CREATED', function (e) {
+                            console.error(e);
                             _this.reloadState();
                         });
-                        miro.addListener('WIDGETS_DELETED', function () {
+                        miro.addListener('WIDGETS_DELETED', function (e) {
+                            console.error(e);
                             _this.reloadState();
                         });
                         return [4 /*yield*/, this.reloadState()];
