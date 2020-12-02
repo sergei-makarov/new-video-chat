@@ -297,12 +297,13 @@ var BreakStateHelper = /** @class */ (function () {
     };
     BreakStateHelper.prototype.init = function () {
         return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.reloadState()];
                     case 1:
                         _a.sent();
-                        setInterval(this.reloadState, config__WEBPACK_IMPORTED_MODULE_0__["STATE_UPDATE_DELAY"]);
+                        setInterval(function () { _this.reloadState(); }, config__WEBPACK_IMPORTED_MODULE_0__["STATE_UPDATE_DELAY"]);
                         return [2 /*return*/];
                 }
             });
