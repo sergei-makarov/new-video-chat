@@ -86,11 +86,12 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
@@ -98,7 +99,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __generator = (this && this.__generator) || function (thisArg, body) {
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
     var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
     return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
     function verb(n) { return function (v) { return step([n, v]); }; }
@@ -125,7 +126,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var _this = this;
+var _this = undefined;
+
 var icon24 = '<?xml version="1.0" encoding="UTF-8"?>\n'
     + '<svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\n'
     + '    <g id="icon-24" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\n'
@@ -134,7 +136,6 @@ var icon24 = '<?xml version="1.0" encoding="UTF-8"?>\n'
     + '        </g>\n'
     + '    </g>\n'
     + '</svg>';
-// @ts-ignore
 miro.onReady(function () { return __awaiter(_this, void 0, void 0, function () {
     var params;
     var _this = this;
@@ -152,10 +153,10 @@ miro.onReady(function () { return __awaiter(_this, void 0, void 0, function () {
                                         authorized = _a.sent();
                                         if (authorized) {
                                             return [2 /*return*/, {
-                                                    title: 'Prototype',
+                                                    title: 'Coffee break',
                                                     svgIcon: icon24,
                                                     onClick: function () {
-                                                        miro.board.ui.openModal('./coffee-break-modal.html');
+                                                        miro.board.ui.openModal(Object(config__WEBPACK_IMPORTED_MODULE_0__["normalizePath"])('coffee-break-modal.html'));
                                                     },
                                                 }];
                                         }
@@ -175,6 +176,20 @@ miro.onReady(function () { return __awaiter(_this, void 0, void 0, function () {
         }
     });
 }); });
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PATH_PREFIX", function() { return PATH_PREFIX; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "normalizePath", function() { return normalizePath; });
+var PATH_PREFIX = 'new-video-chat/';
+function normalizePath(htmlName) {
+    return PATH_PREFIX + "/" + htmlName;
+}
 
 
 /***/ })

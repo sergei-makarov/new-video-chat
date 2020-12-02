@@ -81,19 +81,20 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */,
-/* 1 */
+/* 1 */,
+/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -107,7 +108,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
 })();
 
 
-__webpack_require__(13);
+__webpack_require__(14);
 var Root = /** @class */ (function (_super) {
     __extends(Root, _super);
     function Root() {
@@ -126,19 +127,19 @@ miro.onReady(function () {
 
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 if (false) {} else {
-  module.exports = __webpack_require__(3);
+  module.exports = __webpack_require__(4);
 }
 
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -159,8 +160,8 @@ if (true) {
   (function() {
 'use strict';
 
-var _assign = __webpack_require__(4);
-var checkPropTypes = __webpack_require__(5);
+var _assign = __webpack_require__(5);
+var checkPropTypes = __webpack_require__(6);
 
 var ReactVersion = '16.13.1';
 
@@ -2057,7 +2058,7 @@ exports.version = ReactVersion;
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2154,7 +2155,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2170,7 +2171,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 var printWarning = function() {};
 
 if (true) {
-  var ReactPropTypesSecret = __webpack_require__(6);
+  var ReactPropTypesSecret = __webpack_require__(7);
   var loggedTypeFailures = {};
   var has = Function.call.bind(Object.prototype.hasOwnProperty);
 
@@ -2263,7 +2264,7 @@ module.exports = checkPropTypes;
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2282,7 +2283,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2317,12 +2318,12 @@ function checkDCE() {
 }
 
 if (false) {} else {
-  module.exports = __webpack_require__(8);
+  module.exports = __webpack_require__(9);
 }
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2343,11 +2344,11 @@ if (true) {
   (function() {
 'use strict';
 
-var React = __webpack_require__(2);
-var _assign = __webpack_require__(4);
-var Scheduler = __webpack_require__(9);
-var checkPropTypes = __webpack_require__(5);
-var tracing = __webpack_require__(11);
+var React = __webpack_require__(3);
+var _assign = __webpack_require__(5);
+var Scheduler = __webpack_require__(10);
+var checkPropTypes = __webpack_require__(6);
+var tracing = __webpack_require__(12);
 
 var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED; // Prevent newer renderers from RTE when used with older react package versions.
 // Current owner and dispatcher used to share the same ref,
@@ -27341,19 +27342,19 @@ exports.version = ReactVersion;
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 if (false) {} else {
-  module.exports = __webpack_require__(10);
+  module.exports = __webpack_require__(11);
 }
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28218,19 +28219,19 @@ exports.unstable_wrapCallback = unstable_wrapCallback;
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 if (false) {} else {
-  module.exports = __webpack_require__(12);
+  module.exports = __webpack_require__(13);
 }
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28586,11 +28587,11 @@ exports.unstable_wrap = unstable_wrap;
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(14);
+var content = __webpack_require__(15);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -28604,17 +28605,17 @@ var options = {"hmr":true}
 options.transform = transform
 options.insertInto = undefined;
 
-var update = __webpack_require__(16)(content, options);
+var update = __webpack_require__(17)(content, options);
 
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(15)(false);
+exports = module.exports = __webpack_require__(16)(false);
 // imports
 
 
@@ -28625,7 +28626,7 @@ exports.push([module.i, "html {\n  height: 100%;\n}\nbody {\n  height: 100%;\n  
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports) {
 
 /*
@@ -28707,7 +28708,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -28773,7 +28774,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(17);
+var	fixUrls = __webpack_require__(18);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -29093,7 +29094,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports) {
 
 
