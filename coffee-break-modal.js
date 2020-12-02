@@ -199,7 +199,7 @@ var BreakStateHelper = /** @class */ (function () {
                     case 0: return [4 /*yield*/, this.reloadState()];
                     case 1:
                         _a.sent();
-                        setInterval(this.reloadState(), config__WEBPACK_IMPORTED_MODULE_0__["STATE_UPDATE_DELAY"]);
+                        setInterval(this.reloadState, config__WEBPACK_IMPORTED_MODULE_0__["STATE_UPDATE_DELAY"]);
                         return [2 /*return*/];
                 }
             });
