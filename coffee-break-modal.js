@@ -306,12 +306,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(15);
 /* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_inlinesvg__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1);
-/* harmony import */ var helpers_break_state_helper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2);
-/* harmony import */ var react_unity_webgl_distribution_components_unity__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(20);
-/* harmony import */ var react_unity_webgl_distribution_components_unity__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_unity_webgl_distribution_components_unity__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var react_unity_webgl_distribution_exports__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(24);
-/* harmony import */ var react_unity_webgl_distribution_exports__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_unity_webgl_distribution_exports__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var helpers_break_state_helper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2);
+/* harmony import */ var react_unity_webgl_distribution_components_unity__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(20);
+/* harmony import */ var react_unity_webgl_distribution_components_unity__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_unity_webgl_distribution_components_unity__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_unity_webgl_distribution_exports__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(24);
+/* harmony import */ var react_unity_webgl_distribution_exports__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_unity_webgl_distribution_exports__WEBPACK_IMPORTED_MODULE_5__);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -363,7 +362,6 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 
 
 
-
 __webpack_require__(26);
 var BANNER_IMG = __webpack_require__(31);
 var Root = /** @class */ (function (_super) {
@@ -374,11 +372,11 @@ var Root = /** @class */ (function (_super) {
         return _this;
     }
     Root.prototype.render = function () {
-        var unityContext = new react_unity_webgl_distribution_exports__WEBPACK_IMPORTED_MODULE_6__["UnityContext"]({
-            loaderUrl: Object(config__WEBPACK_IMPORTED_MODULE_3__["normalizePath"])('galaxy/UnityLoader.js'),
-            dataUrl: Object(config__WEBPACK_IMPORTED_MODULE_3__["normalizePath"])('galaxy/js.data.unityweb'),
-            frameworkUrl: Object(config__WEBPACK_IMPORTED_MODULE_3__["normalizePath"])('galaxy/js.wasm.framework.unityweb'),
-            codeUrl: Object(config__WEBPACK_IMPORTED_MODULE_3__["normalizePath"])('galaxy/js.wasm.code.unityweb'),
+        var unityContext = new react_unity_webgl_distribution_exports__WEBPACK_IMPORTED_MODULE_5__["UnityContext"]({
+            loaderUrl: 'galaxy/UnityLoader.js',
+            dataUrl: 'galaxy/js.data.unityweb',
+            frameworkUrl: 'galaxy/js.wasm.framework.unityweb',
+            codeUrl: 'galaxy/js.wasm.code.unityweb',
         });
         return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { ref: this.containerRef },
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'coffee-break-modal__banner_wrapper' },
@@ -386,13 +384,13 @@ var Root = /** @class */ (function (_super) {
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", { className: "miro-btn miro-btn--primary miro-btn--medium", onClick: this.setCoffeeBreakEnabled }, "!!Start coffee break!"),
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", { className: "miro-btn miro-btn--primary miro-btn--medium", onClick: this.setCoffeeBreakDisabled }, "!!Stop coffee break!"),
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", { className: "miro-btn miro-btn--primary miro-btn--medium", onClick: this.test }, "Test"),
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_unity_webgl_distribution_components_unity__WEBPACK_IMPORTED_MODULE_5___default.a, { unityContext: unityContext })));
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_unity_webgl_distribution_components_unity__WEBPACK_IMPORTED_MODULE_4___default.a, { unityContext: unityContext })));
     };
     Root.prototype.setCoffeeBreakEnabled = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, helpers_break_state_helper__WEBPACK_IMPORTED_MODULE_4__["default"].instance.turnOn()];
+                    case 0: return [4 /*yield*/, helpers_break_state_helper__WEBPACK_IMPORTED_MODULE_3__["default"].instance.turnOn()];
                     case 1:
                         _a.sent();
                         return [2 /*return*/];
@@ -404,7 +402,7 @@ var Root = /** @class */ (function (_super) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, helpers_break_state_helper__WEBPACK_IMPORTED_MODULE_4__["default"].instance.turnOff()];
+                    case 0: return [4 /*yield*/, helpers_break_state_helper__WEBPACK_IMPORTED_MODULE_3__["default"].instance.turnOff()];
                     case 1:
                         _a.sent();
                         return [2 /*return*/];
