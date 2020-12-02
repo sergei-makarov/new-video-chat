@@ -124,10 +124,19 @@ var Root = /** @class */ (function (_super) {
         return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { ref: this.containerRef },
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'coffee-break-modal__banner_wrapper' },
                 react__WEBPACK_IMPORTED_MODULE_0__["createElement"](react_inlinesvg__WEBPACK_IMPORTED_MODULE_2___default.a, { className: 'coffee-break-modal__banner', src: BANNER_IMG })),
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", { className: "miro-btn miro-btn--primary miro-btn--medium", onClick: this.setCoffeeBreakEnabled }, "Primary")));
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("button", { className: "miro-btn miro-btn--primary miro-btn--medium", onClick: this.setCoffeeBreakEnabled }, "Start coffee break")));
     };
     Root.prototype.setCoffeeBreakEnabled = function () {
-        alert('!!!');
+        miro.board.widgets.create({
+            type: 'sticker',
+            x: 0,
+            y: 0,
+            width: 100,
+            height: 100,
+            metadata: {
+                creator: 'ME!'
+            }
+        });
     };
     return Root;
 }(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]));
@@ -29707,7 +29716,7 @@ exports = module.exports = __webpack_require__(21)(false);
 
 
 // module
-exports.push([module.i, "html {\n  height: 100%;\n}\nbody {\n  height: 100%;\n  margin: 0;\n  color: #09043C;\n  font: 14px OpenSans, Arial, Helvetica, sans-serif;\n}\n* {\n  user-select: none;\n}\n#react-app {\n  height: 100%;\n}\n.edit-mode {\n  display: flex;\n}\n.select-start-screen {\n  display: flex;\n  height: 48px;\n  justify-content: center;\n  align-items: center;\n  font-size: 16px;\n}\n.icon {\n  width: 24px;\n  height: 24px;\n}\n.btn {\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n}\n.btn:hover {\n  color: #4262ff;\n}\n.coffee-break-modal__banner_wrapper {\n  width: 100%;\n  height: 260px;\n}\n.coffee-break-modal__banner {\n  width: 250px;\n  height: 250px;\n}\n", ""]);
+exports.push([module.i, "html {\n  height: 100%;\n}\nbody {\n  height: 100%;\n  margin: 0;\n  color: #09043C;\n  font: 14px OpenSans, Arial, Helvetica, sans-serif;\n}\n* {\n  user-select: none;\n}\n#react-app {\n  height: 100%;\n}\n.edit-mode {\n  display: flex;\n}\n.select-start-screen {\n  display: flex;\n  height: 48px;\n  justify-content: center;\n  align-items: center;\n  font-size: 16px;\n}\n.icon {\n  width: 24px;\n  height: 24px;\n}\n.btn {\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n}\n.btn:hover {\n  color: #4262ff;\n}\n.coffee-break-modal__banner_wrapper {\n  width: 100%;\n  height: 260px;\n}\n.coffee-break-modal__banner {\n  width: 250px;\n  height: 250px;\n  margin-left: 275px;\n}\n", ""]);
 
 // exports
 

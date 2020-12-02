@@ -150,8 +150,8 @@ miro.onReady(function () { return __awaiter(_this, void 0, void 0, function () {
                                                     svgIcon: icon24,
                                                     onClick: function () {
                                                         miro.board.ui.openModal(Object(config__WEBPACK_IMPORTED_MODULE_0__["normalizePath"])('coffee-break-modal.html'), {
-                                                            width: 550,
-                                                            height: 400
+                                                            width: 800,
+                                                            height: 600
                                                         });
                                                     },
                                                 }];
