@@ -136,8 +136,7 @@ function openModal() {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, miro.board.ui.openModal(Object(config__WEBPACK_IMPORTED_MODULE_0__["normalizePath"])('coffee-break-modal.html'), {
-                        width: 800,
-                        height: 600
+                        fullscreen: true
                     })];
                 case 1:
                     _a.sent();
