@@ -100,8 +100,9 @@ var PATH_PREFIX = 'new-video-chat/';
 var APP_ID = '3074457352186897321';
 var STATE_CHANGED_EVENT_NAME = 'break_state_changed';
 var STATE_UPDATE_DELAY = 500;
-function normalizePath(htmlName) {
-    return PATH_PREFIX + "/" + htmlName;
+function normalizePath(htmlName, withoutSlash) {
+    if (withoutSlash === void 0) { withoutSlash = false; }
+    return "" + PATH_PREFIX + (withoutSlash ? '' : '/') + htmlName;
 }
 
 
@@ -29992,7 +29993,7 @@ var GamePreview = /** @class */ (function (_super) {
     GamePreview.prototype.render = function () {
         return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null,
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-h4' }, this.props.title),
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("img", { src: Object(config__WEBPACK_IMPORTED_MODULE_1__["normalizePath"])("../img/" + this.props.game + ".gif") }),
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("img", { src: Object(config__WEBPACK_IMPORTED_MODULE_1__["normalizePath"])("../img/" + this.props.game + ".gif", true) }),
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-p-large' }, this.props.caption)));
     };
     return GamePreview;
