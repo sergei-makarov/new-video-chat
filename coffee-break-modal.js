@@ -29971,6 +29971,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GamePreview", function() { return GamePreview; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -29982,6 +29983,7 @@ var __extends = (undefined && undefined.__extends) || (function () {
     };
 })();
 
+
 __webpack_require__(22);
 var GamePreview = /** @class */ (function (_super) {
     __extends(GamePreview, _super);
@@ -29991,7 +29993,7 @@ var GamePreview = /** @class */ (function (_super) {
     GamePreview.prototype.render = function () {
         return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null,
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-h4' }, this.props.title),
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("img", { src: "../img/" + this.props.game + ".gif" }),
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("img", { src: Object(config__WEBPACK_IMPORTED_MODULE_1__["normalizePath"])("../img/" + this.props.game + ".gif", true) }),
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-p-large' }, this.props.caption)));
     };
     return GamePreview;
