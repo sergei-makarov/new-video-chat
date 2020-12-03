@@ -393,6 +393,9 @@ var BreakStateHelper = /** @class */ (function () {
             });
         });
     };
+    BreakStateHelper.amIFacilitator = function () {
+        return false;
+    };
     return BreakStateHelper;
 }());
 /* harmony default export */ __webpack_exports__["default"] = (BreakStateHelper);
