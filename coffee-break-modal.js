@@ -96,7 +96,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "STATE_CHANGED_EVENT_NAME", function() { return STATE_CHANGED_EVENT_NAME; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "STATE_UPDATE_DELAY", function() { return STATE_UPDATE_DELAY; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "normalizePath", function() { return normalizePath; });
-var PATH_PREFIX = 'new-video-chat/';
+var PATH_PREFIX = 'new-video-chat';
 var APP_ID = '3074457352186897321';
 var STATE_CHANGED_EVENT_NAME = 'break_state_changed';
 var STATE_UPDATE_DELAY = 500;
