@@ -376,7 +376,6 @@ var Root = /** @class */ (function (_super) {
         return _this;
     }
     Root.prototype.render = function () {
-        debugger;
         var game = this.state.game;
         return (game ? this.renderGame(game) : this.renderDefault());
     };
