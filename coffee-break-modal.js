@@ -414,9 +414,11 @@ var Root = /** @class */ (function (_super) {
     Root.prototype.renderButtons = function () {
         var _this = this;
         var started = helpers_break_state_helper__WEBPACK_IMPORTED_MODULE_2__["default"].instance.getIsBreakEnabled();
-        return (started ?
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-btn miro-btn--primary miro-btn--medium', onClick: function () { _this.setCoffeeBreakEnabled(); } }, "Start") :
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-btn miro-btn--primary miro-btn--medium', onClick: function () { _this.setCoffeeBreakDisabled(); } }, "Finish"));
+        return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'coffee-break-modal__button_wrapper' },
+            "started ?",
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-btn miro-btn--primary miro-btn--medium', onClick: function () { _this.setCoffeeBreakEnabled(); } }, "Start"),
+            ":",
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-btn miro-btn--primary miro-btn--medium', onClick: function () { _this.setCoffeeBreakDisabled(); } }, "Finish")));
     };
     Root.prototype.renderFacilitatorText = function () {
         if (!helpers_break_state_helper__WEBPACK_IMPORTED_MODULE_2__["default"].amIFacilitator()) {
@@ -430,7 +432,7 @@ var Root = /** @class */ (function (_super) {
         }
         return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-p-large coffee-break-modal__description_text' },
             "Currently, the workshop is going. But, if you are tired you can play games. I won't say it nobody.",
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("img", { "coffee-break-modal__smile": true, src: 'img/wink.png' })));
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("img", { className: 'coffee-break-modal__smile', src: 'img/wink.png' })));
     };
     return Root;
 }(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]));
