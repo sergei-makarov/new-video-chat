@@ -95,11 +95,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "APP_ID", function() { return APP_ID; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "STATE_CHANGED_EVENT_NAME", function() { return STATE_CHANGED_EVENT_NAME; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "STATE_UPDATE_DELAY", function() { return STATE_UPDATE_DELAY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ALLOWED_ROLES", function() { return ALLOWED_ROLES; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "normalizePath", function() { return normalizePath; });
 var PATH_PREFIX = 'new-video-chat';
 var APP_ID = '3074457352186897321';
 var STATE_CHANGED_EVENT_NAME = 'break_state_changed';
 var STATE_UPDATE_DELAY = 500;
+var ALLOWED_ROLES = ['owner'];
 function normalizePath(htmlName, withoutSlash) {
     if (withoutSlash === void 0) { withoutSlash = false; }
     return "" + PATH_PREFIX + (withoutSlash ? '' : '/') + htmlName;
@@ -278,7 +280,9 @@ var BreakStateHelper = /** @class */ (function () {
             var widget;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.getStateWidget()];
+                    case 0:
+                        this.setBreakEnabled(false);
+                        return [4 /*yield*/, this.getStateWidget()];
                     case 1:
                         widget = _a.sent();
                         if (!widget) {
@@ -287,14 +291,13 @@ var BreakStateHelper = /** @class */ (function () {
                         return [4 /*yield*/, miro.board.widgets.deleteById(widget.id)];
                     case 2:
                         _a.sent();
-                        this.setBreakEnabled(false);
                         return [2 /*return*/];
                 }
             });
         });
     };
     BreakStateHelper.amIFacilitator = function () {
-        return false;
+        return true;
     };
     return BreakStateHelper;
 }());
