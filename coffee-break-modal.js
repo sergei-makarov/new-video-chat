@@ -290,6 +290,9 @@ var BreakStateHelper = /** @class */ (function () {
             });
         });
     };
+    BreakStateHelper.amIFacilitator = function () {
+        return false;
+    };
     return BreakStateHelper;
 }());
 /* harmony default export */ __webpack_exports__["default"] = (BreakStateHelper);
@@ -370,6 +373,7 @@ var Root = /** @class */ (function (_super) {
         return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'coffee-break-modal__wrapper', ref: this.containerRef },
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-h1 coffee-break-modal__title' }, "It's coffee time now!"),
             this.renderFacilitatorText(),
+            this.renderParticipantText(),
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'coffee-break-modal__banner_wrapper' },
                 react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("img", { className: 'coffee-break-modal__banner', src: 'img/coffee.gif' })),
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-p-medium coffee-break-modal__games_wrapper' },
@@ -404,7 +408,16 @@ var Root = /** @class */ (function (_super) {
         return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("iframe", { src: game + "/index.html" }));
     };
     Root.prototype.renderFacilitatorText = function () {
+        if (helpers_break_state_helper__WEBPACK_IMPORTED_MODULE_2__["default"].amIFacilitator()) {
+            return null;
+        }
         return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-p-large coffee-break-modal__description_text' }, "You have facilitator permissions on this board. At any time, you can start the coffee break by giving the rest of your participants. During the break, they can do their doings or play simple games. You can stop it at any time."));
+    };
+    Root.prototype.renderParticipantText = function () {
+        if (!helpers_break_state_helper__WEBPACK_IMPORTED_MODULE_2__["default"].amIFacilitator()) {
+            return null;
+        }
+        return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-p-large coffee-break-modal__description_text' }, "Currently, the workshop is going. But, if you are tired you can play games. I won't say it nobody."));
     };
     return Root;
 }(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]));
@@ -28957,7 +28970,7 @@ exports = module.exports = __webpack_require__(19)(false);
 
 
 // module
-exports.push([module.i, "html {\n  height: 100%;\n}\nbody {\n  height: 100%;\n  margin: 0;\n  color: #09043C;\n  font: 14px OpenSans, Arial, Helvetica, sans-serif;\n}\n* {\n  user-select: none;\n}\n#react-app {\n  height: 100%;\n}\n.edit-mode {\n  display: flex;\n}\n.select-start-screen {\n  display: flex;\n  height: 48px;\n  justify-content: center;\n  align-items: center;\n  font-size: 16px;\n}\n.icon {\n  width: 24px;\n  height: 24px;\n}\n.btn {\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n}\n.btn:hover {\n  color: #4262ff;\n}\n.coffee-break-modal__wrapper {\n  background-color: #F5F5F7;\n  height: 100%;\n  width: 70%;\n  margin-left: 15%;\n  border-left-style: dashed;\n  border-left-width: 1px;\n  border-left-color: #E1E0E7;\n  border-right-style: dashed;\n  border-right-width: 1px;\n  border-right-color: #E1E0E7;\n}\n.coffee-break-modal__banner {\n  width: 250px;\n  height: 250px;\n  margin-left: calc(50% - 125px);\n}\n.coffee-break-modal__title {\n  text-align: center;\n  padding-top: 50px;\n  margin-bottom: 50px;\n  font-size: 70px;\n}\n.game-preview__wrapper {\n  width: 45%;\n  -webkit-box-shadow: 10px 10px 5px -8px rgba(0, 0, 0, 0.75);\n  -moz-box-shadow: 10px 10px 5px -8px rgba(0, 0, 0, 0.75);\n  box-shadow: 10px 10px 5px -8px rgba(0, 0, 0, 0.75);\n  border-style: solid;\n  border-color: #F0F0F3;\n  border-width: 1px;\n  margin-top: 10px;\n  margin-left: 10px;\n  cursor: pointer;\n  background-color: #FFFFFF;\n}\n.game-preview__title {\n  text-align: center;\n  font-size: 200%;\n  padding-top: 3%;\n}\n.game-preview__img {\n  height: 80%;\n  width: 80%;\n  margin-left: 10%;\n}\n.game-preview__description {\n  text-align: center;\n}\n.coffee-break-modal__description_text {\n  padding-left: 5%;\n  padding-right: 5%;\n  font-size: 24px;\n  line-height: 33px;\n  margin-bottom: 5%;\n}\n.coffee-break-modal__games_wrapper {\n  border-style: solid;\n  border-color: #CDCCD7;\n  border-width: 2px;\n  border-radius: 10px;\n  margin: 10px;\n}\n.coffee-break-modal__games_description {\n  position: relative;\n  top: -10px;\n  left: 13px;\n  background: #F5F5F7;\n  width: fit-content;\n  padding-left: 5px;\n  padding-right: 5px;\n}\n", ""]);
+exports.push([module.i, "html {\n  height: 100%;\n}\nbody {\n  height: 100%;\n  margin: 0;\n  color: #09043C;\n  font: 14px OpenSans, Arial, Helvetica, sans-serif;\n}\n* {\n  user-select: none;\n}\n#react-app {\n  height: 100%;\n}\n.edit-mode {\n  display: flex;\n}\n.select-start-screen {\n  display: flex;\n  height: 48px;\n  justify-content: center;\n  align-items: center;\n  font-size: 16px;\n}\n.icon {\n  width: 24px;\n  height: 24px;\n}\n.btn {\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n}\n.btn:hover {\n  color: #4262ff;\n}\n.coffee-break-modal__wrapper {\n  background-color: #F5F5F7;\n  height: 100%;\n  width: 70%;\n  margin-left: 15%;\n  border-left-style: dashed;\n  border-left-width: 1px;\n  border-left-color: #E1E0E7;\n  border-right-style: dashed;\n  border-right-width: 1px;\n  border-right-color: #E1E0E7;\n}\n.coffee-break-modal__banner {\n  width: 250px;\n  height: 250px;\n  margin-left: calc(50% - 125px);\n}\n.coffee-break-modal__title {\n  text-align: center;\n  padding-top: 50px;\n  margin-bottom: 50px;\n  font-size: 70px;\n}\n.game-preview__wrapper {\n  width: 45%;\n  -webkit-box-shadow: 10px 10px 5px -8px rgba(0, 0, 0, 0.75);\n  -moz-box-shadow: 10px 10px 5px -8px rgba(0, 0, 0, 0.75);\n  box-shadow: 10px 10px 5px -8px rgba(0, 0, 0, 0.75);\n  border-style: solid;\n  border-color: #F0F0F3;\n  border-width: 1px;\n  margin-top: 10px;\n  margin-left: 10px;\n  cursor: pointer;\n  background-color: #FFFFFF;\n  border-radius: 10px;\n}\n.game-preview__title {\n  text-align: center;\n  font-size: 200%;\n  padding-top: 3%;\n}\n.game-preview__img {\n  height: 80%;\n  width: 80%;\n  margin-left: 10%;\n}\n.game-preview__description {\n  text-align: center;\n}\n.coffee-break-modal__description_text {\n  padding-left: 5%;\n  padding-right: 5%;\n  font-size: 24px;\n  line-height: 33px;\n  margin-bottom: 5%;\n}\n.coffee-break-modal__games_wrapper {\n  border-style: solid;\n  border-color: #CDCCD7;\n  border-width: 2px;\n  border-radius: 10px;\n  margin: 10px;\n}\n.coffee-break-modal__games_description {\n  position: relative;\n  top: -11px;\n  left: 13px;\n  background: #F5F5F7;\n  width: fit-content;\n  padding-left: 5px;\n  padding-right: 5px;\n}\n", ""]);
 
 // exports
 
