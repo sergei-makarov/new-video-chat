@@ -29992,7 +29992,7 @@ var GamePreview = /** @class */ (function (_super) {
     GamePreview.prototype.render = function () {
         return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null,
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-h4' }, this.props.title),
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("img", { src: "../img/" + Object(config__WEBPACK_IMPORTED_MODULE_1__["normalizePath"])(this.props.game) + ".gif" }),
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("img", { src: Object(config__WEBPACK_IMPORTED_MODULE_1__["normalizePath"])("../img/" + this.props.game + ".gif") }),
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-p-large' }, this.props.caption)));
     };
     return GamePreview;
