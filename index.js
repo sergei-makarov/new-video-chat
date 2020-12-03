@@ -256,6 +256,9 @@ var BreakStateHelper = /** @class */ (function () {
     function BreakStateHelper() {
         this.isBreakEnabled = false;
     }
+    BreakStateHelper.prototype.getIsBreakEnabled = function () {
+        return this.isBreakEnabled;
+    };
     Object.defineProperty(BreakStateHelper, "instance", {
         get: function () {
             if (!BreakStateHelper.initInstance) {

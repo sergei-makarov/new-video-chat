@@ -153,6 +153,9 @@ var BreakStateHelper = /** @class */ (function () {
     function BreakStateHelper() {
         this.isBreakEnabled = false;
     }
+    BreakStateHelper.prototype.getIsBreakEnabled = function () {
+        return this.isBreakEnabled;
+    };
     Object.defineProperty(BreakStateHelper, "instance", {
         get: function () {
             if (!BreakStateHelper.initInstance) {
@@ -410,7 +413,7 @@ var Root = /** @class */ (function (_super) {
     };
     Root.prototype.renderButtons = function () {
         var _this = this;
-        var started = this.state.started || false;
+        var started = helpers_break_state_helper__WEBPACK_IMPORTED_MODULE_2__["default"].instance.getIsBreakEnabled();
         return (started ?
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-btn miro-btn--primary miro-btn--medium', onClick: function () { _this.setCoffeeBreakEnabled(); } }, "Start") :
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-btn miro-btn--primary miro-btn--medium', onClick: function () { _this.setCoffeeBreakDisabled(); } }, "Finish"));
