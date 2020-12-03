@@ -29990,9 +29990,9 @@ var GamePreview = /** @class */ (function (_super) {
     }
     GamePreview.prototype.render = function () {
         return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'game-preview__wrapper' },
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-h4' }, this.props.title),
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("img", { src: "img/" + this.props.game + ".gif" }),
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-p-large' }, this.props.caption)));
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-h4 game-preview__title' }, this.props.title),
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("img", { className: 'game-preview__img', src: "img/" + this.props.game + ".gif" }),
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-p-large game-preview__description' }, this.props.caption)));
     };
     return GamePreview;
 }(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]));
