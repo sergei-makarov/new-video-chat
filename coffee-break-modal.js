@@ -29989,7 +29989,7 @@ var GamePreview = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     GamePreview.prototype.render = function () {
-        return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null,
+        return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'game-preview__wrapper' },
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-h4' }, this.props.title),
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("img", { src: "img/" + this.props.game + ".gif" }),
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-p-large' }, this.props.caption)));
@@ -30033,7 +30033,7 @@ exports = module.exports = __webpack_require__(24)(false);
 
 
 // module
-exports.push([module.i, "html {\n  height: 100%;\n}\nbody {\n  height: 100%;\n  margin: 0;\n  color: #09043C;\n  font: 14px OpenSans, Arial, Helvetica, sans-serif;\n}\n* {\n  user-select: none;\n}\n#react-app {\n  height: 100%;\n}\n.edit-mode {\n  display: flex;\n}\n.select-start-screen {\n  display: flex;\n  height: 48px;\n  justify-content: center;\n  align-items: center;\n  font-size: 16px;\n}\n.icon {\n  width: 24px;\n  height: 24px;\n}\n.btn {\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n}\n.btn:hover {\n  color: #4262ff;\n}\n.coffee-break-modal__banner_wrapper {\n  width: 100%;\n  height: 260px;\n}\n.coffee-break-modal__banner {\n  width: 250px;\n  height: 250px;\n  margin-left: 275px;\n}\n", ""]);
+exports.push([module.i, "html {\n  height: 100%;\n}\nbody {\n  height: 100%;\n  margin: 0;\n  color: #09043C;\n  font: 14px OpenSans, Arial, Helvetica, sans-serif;\n}\n* {\n  user-select: none;\n}\n#react-app {\n  height: 100%;\n}\n.edit-mode {\n  display: flex;\n}\n.select-start-screen {\n  display: flex;\n  height: 48px;\n  justify-content: center;\n  align-items: center;\n  font-size: 16px;\n}\n.icon {\n  width: 24px;\n  height: 24px;\n}\n.btn {\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n}\n.btn:hover {\n  color: #4262ff;\n}\n.coffee-break-modal__banner_wrapper {\n  width: 100%;\n  height: 260px;\n}\n.coffee-break-modal__banner {\n  width: 250px;\n  height: 250px;\n  margin-left: 275px;\n}\n.game-preview__wrapper {\n  width: 280px;\n  -webkit-box-shadow: 10px 10px 5px -8px rgba(0, 0, 0, 0.75);\n  -moz-box-shadow: 10px 10px 5px -8px rgba(0, 0, 0, 0.75);\n  box-shadow: 10px 10px 5px -8px rgba(0, 0, 0, 0.75);\n  border-style: solid;\n  border-color: #8080808c;\n  border-width: 1px;\n  margin-top: 10px;\n  margin-left: 10px;\n}\n.game-preview__title {\n  text-align: center;\n}\n.game-preview__img {\n  height: 200px;\n  width: 266px;\n}\n.game-preview__description {\n  text-align: center;\n}\n", ""]);
 
 // exports
 
