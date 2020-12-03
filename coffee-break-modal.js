@@ -408,13 +408,13 @@ var Root = /** @class */ (function (_super) {
         return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("iframe", { src: game + "/index.html" }));
     };
     Root.prototype.renderFacilitatorText = function () {
-        if (helpers_break_state_helper__WEBPACK_IMPORTED_MODULE_2__["default"].amIFacilitator()) {
+        if (!helpers_break_state_helper__WEBPACK_IMPORTED_MODULE_2__["default"].amIFacilitator()) {
             return null;
         }
         return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-p-large coffee-break-modal__description_text' }, "You have facilitator permissions on this board. At any time, you can start the coffee break by giving the rest of your participants. During the break, they can do their doings or play simple games. You can stop it at any time."));
     };
     Root.prototype.renderParticipantText = function () {
-        if (!helpers_break_state_helper__WEBPACK_IMPORTED_MODULE_2__["default"].amIFacilitator()) {
+        if (helpers_break_state_helper__WEBPACK_IMPORTED_MODULE_2__["default"].amIFacilitator()) {
             return null;
         }
         return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'miro-p-large coffee-break-modal__description_text' }, "Currently, the workshop is going. But, if you are tired you can play games. I won't say it nobody."));
