@@ -372,7 +372,8 @@ var Root = /** @class */ (function (_super) {
             this.renderFacilitatorText(),
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'coffee-break-modal__banner_wrapper' },
                 react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("img", { className: 'coffee-break-modal__banner', src: 'img/coffee.gif' })),
-            react__WEBPACK_IMPORTED_MODULE_0__["createElement"](games_GamePreview__WEBPACK_IMPORTED_MODULE_4__["GamePreview"], { game: games_Games__WEBPACK_IMPORTED_MODULE_3__["Games"].Galaxy, title: 'Exterminate the task', caption: 'Feel like as the true developer at Miro' })));
+            react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", { className: 'coffee-break-modal__games_wrapper' },
+                react__WEBPACK_IMPORTED_MODULE_0__["createElement"](games_GamePreview__WEBPACK_IMPORTED_MODULE_4__["GamePreview"], { game: games_Games__WEBPACK_IMPORTED_MODULE_3__["Games"].Galaxy, title: 'Exterminate the task', caption: 'Feel like as the true developer at Miro' }))));
     };
     Root.prototype.setCoffeeBreakEnabled = function () {
         return __awaiter(this, void 0, void 0, function () {
