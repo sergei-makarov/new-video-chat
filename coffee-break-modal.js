@@ -373,6 +373,9 @@ var Root = /** @class */ (function (_super) {
     function Root() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.containerRef = react__WEBPACK_IMPORTED_MODULE_0__["createRef"]();
+        _this.state = {
+            game: undefined
+        };
         return _this;
     }
     Root.prototype.render = function () {
@@ -452,7 +455,7 @@ var Root = /** @class */ (function (_super) {
             react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("img", { className: 'coffee-break-modal__smile', src: 'img/wink.png' })));
     };
     return Root;
-}(react__WEBPACK_IMPORTED_MODULE_0__["PureComponent"]));
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]));
 miro.onReady(function () {
     react_dom__WEBPACK_IMPORTED_MODULE_1__["render"](react__WEBPACK_IMPORTED_MODULE_0__["createElement"](Root, null), document.getElementById('react-app'));
 });
